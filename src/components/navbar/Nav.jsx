@@ -89,7 +89,7 @@ const Nav = () => {
                 p: 0
               }}
               >
-                <a href="https://github.com/0xNaim" underline="none" target="_blank" rel="noreferrer">
+                <a href="https://github.com/0xNaim/URL-Shortener" underline="none" target="_blank" rel="noreferrer">
                   <GitHub
                     sx={{
                       color: 'white',
