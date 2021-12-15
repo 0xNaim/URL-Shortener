@@ -73,10 +73,7 @@ const Shortener = () => {
           <Typography
             variant="body2"
             sx={{
-              mb: {
-                xs: 2,
-                md: 3
-              },
+              mb: 2,
               color: '#303030'
             }}
           >
