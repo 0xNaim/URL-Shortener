@@ -8,6 +8,7 @@ import {
   Grid,
   Snackbar,
   TextField,
+  Tooltip,
   Typography
 } from '@mui/material';
 import axios from 'axios';
@@ -123,19 +124,21 @@ const Shortener = () => {
           )}
 
           { shortLink && (
-            <Button
-              variant="contained"
-              color="primary"
-              fullWidth
-              endIcon={<ContentCopy />}
-              sx={{
-                py: 1,
-                textTransform: 'lowercase'
-              }}
-              onClick={handleOpen}
-            >
-              { shortLink }
-            </Button>
+            <Tooltip title="Copy to clipboard">
+              <Button
+                variant="contained"
+                color="primary"
+                fullWidth
+                endIcon={<ContentCopy />}
+                sx={{
+                  py: 1,
+                  textTransform: 'lowercase'
+                }}
+                onClick={handleOpen}
+              >
+                { shortLink }
+              </Button>
+            </Tooltip>
           )}
         </Box>
       </Grid>
