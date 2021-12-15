@@ -10,7 +10,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import URLShortener from '../../assets/images/URL-Shortener.jpg';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   link: {
     color: 'inherit',
     textDecoration: 'none'

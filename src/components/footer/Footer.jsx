@@ -14,7 +14,7 @@ import {
 import { makeStyles } from '@mui/styles';
 import React from 'react';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   footer: {
     position: 'fixed',
     top: 'auto',
@@ -63,7 +63,7 @@ const Footer = () => {
           <Favorite
             color="error"
             sx={{
-              fontSize: 10
+              fontSize: 12
             }}
           />
           {' '}
@@ -114,7 +114,7 @@ const Footer = () => {
             </a>
           </IconButton>
         </Tooltip>
-        <Tooltip title="Github">
+        <Tooltip title="GitHub">
           <IconButton sx={{
             p: 0
           }}
