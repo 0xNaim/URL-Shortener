@@ -101,7 +101,7 @@ const Nav = () => {
                 </a>
               </IconButton>
             </Tooltip>
-            <Tooltip title="Night">
+            <Tooltip title="Dark">
               <IconButton sx={{
                 p: 0
               }}
