@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 
 const Shortener = () => {
@@ -53,6 +54,9 @@ const Shortener = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Shortener || URL Shortener</title>
+      </Helmet>
       <Grid
         container
         direction="column"
