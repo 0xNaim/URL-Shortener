@@ -40,7 +40,13 @@ const HeroArea = () => {
           alignItems: 'center'
         }}
       >
-        <Box>
+        <Box sx={{
+          width: {
+            xs: '85%',
+            md: '75%'
+          }
+        }}
+        >
           <Typography
             variant="h3"
             gutterBottom
@@ -57,11 +63,7 @@ const HeroArea = () => {
               color: '#4b5563'
             }}
           >
-            URL Shortener is a simple react web application        where users can short their
-            {' '}
-            <br />
-            {' '}
-            long URL into a short URL.
+            URL Shortener is a simple react web application        where users can short their long URL into a short URL.
           </Typography>
           <Link to="/short" className={classes.link}>
             <Button
