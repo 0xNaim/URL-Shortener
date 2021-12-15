@@ -15,7 +15,7 @@ import {
 import { makeStyles } from '@mui/styles';
 import { NavLink } from 'react-router-dom';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   navLink: {
     color: 'inherit',
     textDecoration: 'none'
