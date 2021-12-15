@@ -123,7 +123,7 @@ const Footer = () => {
               <GitHub
                 sx={{
                   color: '#6b7280',
-                  mr: 1
+                  fontSize: 20
                 }}
               />
             </a>
