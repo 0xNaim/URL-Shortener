@@ -21,7 +21,7 @@
     // "react/no-unused-class-component-methods": "off",
     // "import/no-import-module-exports": "off",
     // "import/no-relative-packages": "off",
-    // "react/jsx-indent": ["error", 2],
+    // "react/jsx-indent": ["error", 2],\
     "import/newline-after-import": ["error", { "count": 1 }],
     "react/no-unescaped-entities": "off",
     "comma-dangle": ["error", "never"],

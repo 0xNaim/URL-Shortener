@@ -13,11 +13,14 @@ import {
 import axios from 'axios';
 import React, { useState } from 'react';
 
+
 const Shortener = () => {
   const [link, setLink] = useState('');
   const [shortLink, setShortLink] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const validUrl = /^(ftp|http|https):\/\/[^ "]+$/.test(link);
 
   const getShortLink = async () => {
     await axios.get(`https://api.shrtco.de/v2/shorten?url=${link}`)
@@ -35,15 +38,15 @@ const Shortener = () => {
   };
 
   const handleOpen = () => {
-    setOpen(true);
     navigator.clipboard.writeText(shortLink);
+    setOpen(true);
   };
+
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
-
     setOpen(false);
   };
 
@@ -58,7 +61,13 @@ const Shortener = () => {
           minHeight: '80vh'
         }}
       >
-        <Box>
+        <Box sx={{
+          width: {
+            xs: '100%',
+            md: '50%'
+          }
+        }}
+        >
           <Typography variant="h6">Short URL Generator</Typography>
           <Typography
             variant="body2"
@@ -75,6 +84,7 @@ const Shortener = () => {
             type="search"
             autoComplete="off"
             fullWidth
+            value={link}
             onChange={(e) => setLink(e.target.value)}
             sx={{
               mb: 2
@@ -85,6 +95,7 @@ const Shortener = () => {
               variant="contained"
               color="primary"
               fullWidth
+              disabled={!validUrl}
               onClick={handleClick}
               sx={{
                 py: 1,
@@ -97,7 +108,7 @@ const Shortener = () => {
 
           {isLoading && (
           <Button
-            loading
+            loading="true"
             variant="contained"
             color="primary"
             disabled
@@ -112,19 +123,19 @@ const Shortener = () => {
           )}
 
           { shortLink && (
-          <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            endIcon={<ContentCopy />}
-            sx={{
-              py: 1,
-              textTransform: 'lowercase'
-            }}
-            onClick={handleOpen}
-          >
-            { shortLink }
-          </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              endIcon={<ContentCopy />}
+              sx={{
+                py: 1,
+                textTransform: 'lowercase'
+              }}
+              onClick={handleOpen}
+            >
+              { shortLink }
+            </Button>
           )}
         </Box>
       </Grid>
@@ -133,7 +144,7 @@ const Shortener = () => {
         autoHideDuration={3000}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: 'top', horizontal: 'right'
+          vertical: 'bottom', horizontal: 'right'
         }}
       >
         <Alert

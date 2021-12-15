@@ -84,7 +84,7 @@ const Nav = () => {
                 Short
               </Button>
             </NavLink>
-            <Tooltip title="Github">
+            <Tooltip title="GitHub repository">
               <IconButton sx={{
                 p: 0
               }}

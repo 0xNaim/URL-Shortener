@@ -15,6 +15,11 @@ import { makeStyles } from '@mui/styles';
 import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
+  footer: {
+    position: 'fixed',
+    top: 'auto',
+    bottom: 0
+  },
   footerLink: {
     color: '#1c70fe',
     textDecoration: 'none',
@@ -30,6 +35,7 @@ const Footer = () => {
   return (
     <Container
       maxWidth="xl"
+      className={classes.footer}
       sx={{
         bgcolor: '#f8f9fa',
         display: 'flex',
@@ -74,7 +80,10 @@ const Footer = () => {
         </Typography>
       </Box>
 
-      <Box>
+      <Box sx={{
+        mt: 1
+      }}
+      >
         <Tooltip title="Facebook">
           <IconButton sx={{
             p: 0
