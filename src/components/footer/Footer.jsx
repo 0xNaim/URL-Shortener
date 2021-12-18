@@ -8,6 +8,7 @@ import {
   Box,
   Container,
   IconButton,
+  Link,
   Tooltip,
   Typography
 } from '@mui/material';
@@ -37,14 +38,9 @@ const Footer = () => {
       maxWidth="xl"
       className={classes.footer}
       sx={{
-        bgcolor: '#f8f9fa',
         display: 'flex',
         alignItems: 'center',
-        py: {
-          xs: 1,
-          sm: 1,
-          md: 2
-        }
+        opacity: 0.85
       }}
     >
       <Box sx={{
@@ -54,9 +50,6 @@ const Footer = () => {
         <Typography
           variant="body2"
           align="left"
-          sx={{
-            color: '#303030'
-          }}
         >
           Made with
           {' '}
@@ -81,7 +74,10 @@ const Footer = () => {
       </Box>
 
       <Box sx={{
-        mt: 1
+        minWidth: '80px',
+        mt: 1,
+        display: 'flex',
+        justifyContent: 'space-between'
       }}
       >
         <Tooltip title="Facebook">
@@ -89,14 +85,9 @@ const Footer = () => {
             p: 0
           }}
           >
-            <a href="https://www.facebook.com/0xNaim" underline="none" target="_blank" rel="noreferrer">
-              <Facebook
-                sx={{
-                  color: '#6b7280',
-                  mr: 1
-                }}
-              />
-            </a>
+            <Link color="inherit" href="https://www.facebook.com/0xNaim" underline="none" target="_blank" rel="noreferrer">
+              <Facebook />
+            </Link>
           </IconButton>
         </Tooltip>
         <Tooltip title="LinkedIn">
@@ -104,14 +95,9 @@ const Footer = () => {
             p: 0
           }}
           >
-            <a href="https://www.linkedin.com/in/0xnaim/" underline="none" target="_blank" rel="noreferrer">
-              <LinkedIn
-                sx={{
-                  color: '#6b7280',
-                  mr: 1
-                }}
-              />
-            </a>
+            <Link color="inherit" href="https://www.linkedin.com/in/0xnaim/" underline="none" target="_blank" rel="noreferrer">
+              <LinkedIn />
+            </Link>
           </IconButton>
         </Tooltip>
         <Tooltip title="GitHub">
@@ -119,14 +105,9 @@ const Footer = () => {
             p: 0
           }}
           >
-            <a href="https://github.com/0xNaim" underline="none" target="_blank" rel="noreferrer">
-              <GitHub
-                sx={{
-                  color: '#6b7280',
-                  fontSize: 20
-                }}
-              />
-            </a>
+            <Link color="inherit" href="https://github.com/0xNaim" underline="none" target="_blank" rel="noreferrer">
+              <GitHub />
+            </Link>
           </IconButton>
         </Tooltip>
       </Box>

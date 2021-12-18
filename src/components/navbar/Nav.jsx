@@ -1,6 +1,7 @@
 import {
-  DarkModeOutlined,
-  GitHub
+  DarkModeTwoTone,
+  GitHub,
+  LightModeTwoTone
 } from '@mui/icons-material';
 import {
   AppBar,
@@ -8,12 +9,16 @@ import {
   Button,
   Container,
   IconButton,
+  Link,
   Toolbar,
   Tooltip,
-  Typography
+  Typography,
+  useTheme
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { NavLink } from 'react-router-dom';
+import { useColorMode } from '../../contexts/themeContext';
+
 
 const useStyles = makeStyles(() => ({
   navLink: {
@@ -28,6 +33,9 @@ const useStyles = makeStyles(() => ({
 
 const Nav = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const colorMode = useColorMode();
+
   return (
     <AppBar position="sticky">
       <Container maxWidth="xl">
@@ -89,29 +97,39 @@ const Nav = () => {
                 p: 0
               }}
               >
-                <a href="https://github.com/0xNaim/URL-Shortener" underline="none" target="_blank" rel="noreferrer">
+                <Link color="inherit" href="https://github.com/0xNaim/URL-Shortener" underline="none" target="_blank" rel="noreferrer">
                   <GitHub
                     sx={{
-                      color: 'white',
+                      color: '#fff',
                       mx: {
                         xs: 0.6, md: 1.2
                       }
                     }}
                   />
-                </a>
+                </Link>
               </IconButton>
             </Tooltip>
-            <Tooltip title="Dark">
-              <IconButton sx={{
-                p: 0
-              }}
-              >
-                <DarkModeOutlined sx={{
-                  color: 'white',
-                  fontSize: 27,
-                  marginTop: -0.7
+            <Tooltip title={theme.palette.mode === 'light' ? 'Dark' : 'Light'}>
+              <IconButton
+                onClick={colorMode.toggleColorMode}
+                color="inherit"
+                sx={{
+                  p: 0
                 }}
-                />
+              >
+                {theme.palette.mode === 'dark' ? (
+                  <LightModeTwoTone
+                    sx={{
+                      mt: '-5px'
+                    }}
+                  />
+                ) : (
+                  <DarkModeTwoTone
+                    sx={{
+                      mt: '-5px'
+                    }}
+                  />
+                )}
               </IconButton>
             </Tooltip>
           </Box>

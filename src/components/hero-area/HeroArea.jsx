@@ -24,7 +24,7 @@ const HeroArea = () => {
     <Grid
       container
       sx={{
-        minHeight: '80vh',
+        minHeight: '90vh',
         px: {
           xs: 2,
           md: 3
@@ -37,21 +37,23 @@ const HeroArea = () => {
         md={6}
         sx={{
           display: 'flex',
-          alignItems: 'center'
+          alignItems: 'center',
+          color: 'inherit'
         }}
       >
-        <Box sx={{
-          width: {
-            xs: '85%',
-            md: '75%'
-          }
-        }}
+        <Box
+          sx={{
+            width: {
+              xs: '85%',
+              md: '75%'
+            }
+          }}
         >
           <Typography
             variant="h3"
             gutterBottom
             sx={{
-              color: '#111827'
+              opacity: 0.9
             }}
           >
             URL Shortener
@@ -60,7 +62,7 @@ const HeroArea = () => {
             gutterBottom
             variant="body2"
             sx={{
-              color: '#4b5563'
+              opacity: 0.8
             }}
           >
             URL Shortener is a simple react web application        where users can short their long URL into a short URL.
@@ -94,8 +96,8 @@ const HeroArea = () => {
         <Box
           component="img"
           sx={{
-            width: 600,
-            height: 400
+            minWidth: 300,
+            minHeight: 250
           }}
           alt="URL Shortener"
           src={URLShortener}

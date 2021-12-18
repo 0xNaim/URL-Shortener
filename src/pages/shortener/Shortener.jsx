@@ -4,8 +4,7 @@ import {
   Box,
   Button,
   CircularProgress,
-  Container,
-  Grid,
+  Container, Grid,
   Snackbar,
   TextField,
   Tooltip,
@@ -53,49 +52,52 @@ const Shortener = () => {
   };
 
   return (
-    <Container>
+    <>
       <Helmet>
         <title>Shortener || URL Shortener</title>
       </Helmet>
-      <Grid
-        container
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-        sx={{
-          minHeight: '80vh'
-        }}
-      >
-        <Box sx={{
-          width: {
-            xs: '100%',
-            md: '50%'
-          }
-        }}
+
+      <Container>
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+          sx={{
+            minHeight: '90vh'
+          }}
         >
-          <Typography variant="h6">Short URL Generator</Typography>
-          <Typography
-            variant="body2"
+          <Box
             sx={{
-              mb: 2,
-              color: '#303030'
+              width: {
+                xs: '100%',
+                md: '50%'
+              }
             }}
           >
-            URL shortener built to generate short link that creates better click impression.
-          </Typography>
-          <TextField
-            id="outlined-search"
-            label="Paste a long link"
-            type="search"
-            autoComplete="off"
-            fullWidth
-            value={link}
-            onChange={(e) => setLink(e.target.value)}
-            sx={{
-              mb: 2
-            }}
-          />
-          {!isLoading && (
+            <Typography variant="h6">Short URL Generator</Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                mb: 2,
+                opacity: 0.8
+              }}
+            >
+              URL shortener built to generate short link that creates better click impression.
+            </Typography>
+            <TextField
+              id="outlined-search"
+              label="Paste a long link"
+              type="search"
+              autoComplete="off"
+              fullWidth
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
+              sx={{
+                mb: 2
+              }}
+            />
+            {!isLoading && (
             <Button
               variant="contained"
               color="primary"
@@ -107,27 +109,27 @@ const Shortener = () => {
                 mb: 1
               }}
             >
-              Short a link
+              Generate Short link
             </Button>
-          )}
+            )}
 
-          {isLoading && (
-          <Button
-            loading="true"
-            variant="contained"
-            color="primary"
-            disabled
-            fullWidth
-            sx={{
-              py: 1,
-              mb: 1
-            }}
-          >
-            <CircularProgress color="inherit" size={20} />
-          </Button>
-          )}
+            {isLoading && (
+              <Button
+                loading="true"
+                variant="contained"
+                color="primary"
+                disabled
+                fullWidth
+                sx={{
+                  py: 1,
+                  mb: 1
+                }}
+              >
+                <CircularProgress color="inherit" size={20} />
+              </Button>
+            )}
 
-          { shortLink && (
+            { shortLink && (
             <Tooltip title="Copy to clipboard">
               <Button
                 variant="contained"
@@ -143,28 +145,30 @@ const Shortener = () => {
                 { shortLink }
               </Button>
             </Tooltip>
-          )}
-        </Box>
-      </Grid>
-      <Snackbar
-        open={open}
-        autoHideDuration={3000}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'bottom', horizontal: 'right'
-        }}
-      >
-        <Alert
+            )}
+          </Box>
+        </Grid>
+
+        <Snackbar
+          open={open}
+          autoHideDuration={3000}
           onClose={handleClose}
-          severity="success"
-          sx={{
-            width: '100%'
+          anchorOrigin={{
+            vertical: 'bottom', horizontal: 'right'
           }}
         >
-          Link copied!
-        </Alert>
-      </Snackbar>
-    </Container>
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            sx={{
+              width: '100%'
+            }}
+          >
+            Link copied!
+          </Alert>
+        </Snackbar>
+      </Container>
+    </>
   );
 };
 
