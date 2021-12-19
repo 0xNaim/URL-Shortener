@@ -4,7 +4,8 @@ import {
   Box,
   Button,
   CircularProgress,
-  Container, Grid,
+  Container,
+  Grid,
   Snackbar,
   TextField,
   Tooltip,
@@ -92,7 +93,7 @@ const Shortener = () => {
               autoComplete="off"
               fullWidth
               value={link}
-              onChange={(e) => setLink(e.target.value)}
+              onChange={(e) => setLink(e.target.value.toLowerCase().trim())}
               sx={{
                 mb: 2
               }}

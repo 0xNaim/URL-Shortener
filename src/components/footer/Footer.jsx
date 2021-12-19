@@ -10,16 +10,24 @@ import {
   IconButton,
   Link,
   Tooltip,
-  Typography
+  Typography,
+  useTheme
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
 
 const useStyles = makeStyles(() => ({
-  footer: {
+  footerLight: {
     position: 'fixed',
     top: 'auto',
-    bottom: 0
+    bottom: 0,
+    backgroundColor: '#f8f9fa'
+  },
+  footerDark: {
+    position: 'fixed',
+    top: 'auto',
+    bottom: 0,
+    backgroundColor: '#1c1c1c'
   },
   footerLink: {
     color: '#1c70fe',
@@ -32,11 +40,12 @@ const useStyles = makeStyles(() => ({
 
 const Footer = () => {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <Container
       maxWidth="xl"
-      className={classes.footer}
+      className={theme.palette.mode === 'light' ? classes.footerLight : classes.footerDark}
       sx={{
         display: 'flex',
         alignItems: 'center',
