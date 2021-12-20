@@ -17,6 +17,7 @@ const ColorModeContext = createContext({
 
 const ColorModeContextProvider = ({ children }) => {
   const [mode, setMode] = useState('light');
+
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
