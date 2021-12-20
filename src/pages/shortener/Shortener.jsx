@@ -65,7 +65,7 @@ const Shortener = () => {
           justifyContent="center"
           alignItems="center"
           sx={{
-            minHeight: '90vh'
+            minHeight: '85vh'
           }}
         >
           <Box
