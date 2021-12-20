@@ -16,15 +16,26 @@ const ColorModeContext = createContext({
 });
 
 const ColorModeContextProvider = ({ children }) => {
-  const [mode, setMode] = useState('light');
+  const themeMode = localStorage.getItem('themeMode');
+  const [mode, setMode] = useState(themeMode || 'light');
 
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+        // setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+        if (mode === 'light') {
+          setMode('dark');
+          localStorage.setItem('themeMode', 'dark');
+        } else if (mode === 'dark') {
+          setMode('light');
+          localStorage.setItem('themeMode', 'light');
+        } else {
+          setMode('light');
+          localStorage.setItem('themeMode', 'light');
+        }
       }
     }),
-    []
+    [mode]
   );
 
   const theme = useMemo(
