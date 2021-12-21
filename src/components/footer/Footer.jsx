@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#1c1c1c'
   },
   footerLink: {
-    color: '#1c70fe',
+    color: '#1976d2',
     marginLeft: '3px',
     textDecoration: 'none',
     '&:hover': {
