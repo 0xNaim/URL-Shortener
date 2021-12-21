@@ -10,7 +10,6 @@ import {
   IconButton,
   Link,
   Tooltip,
-  Typography,
   useTheme
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
@@ -31,6 +30,7 @@ const useStyles = makeStyles(() => ({
   },
   footerLink: {
     color: '#1c70fe',
+    marginLeft: '3px',
     textDecoration: 'none',
     '&:hover': {
       textDecoration: 'underline'
@@ -56,30 +56,35 @@ const Footer = () => {
         flexGrow: 1
       }}
       >
-        <Typography
-          variant="body2"
+        <Box
+          component="span"
           align="left"
+          sx={{
+            display: 'flex',
+            alignItems: 'center'
+          }}
         >
           Made with
           {' '}
           <Favorite
             color="error"
             sx={{
-              fontSize: 12
+              fontSize: 14,
+              mt: 0.2,
+              mx: 0.3
             }}
           />
           {' '}
           by
-          {' '}
-          <a
+          <Link
             href="https://www.facebook.com/0xNaim"
             target="_blank"
             rel="noreferrer"
             className={classes.footerLink}
           >
             Naim
-          </a>
-        </Typography>
+          </Link>
+        </Box>
       </Box>
 
       <Box sx={{
