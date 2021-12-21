@@ -18,15 +18,9 @@ import React from 'react';
 
 const useStyles = makeStyles(() => ({
   footerLight: {
-    position: 'fixed',
-    top: 'auto',
-    bottom: 0,
     backgroundColor: '#f8f9fa'
   },
   footerDark: {
-    position: 'fixed',
-    top: 'auto',
-    bottom: 0,
     backgroundColor: '#1c1c1c'
   },
   footerLink: {

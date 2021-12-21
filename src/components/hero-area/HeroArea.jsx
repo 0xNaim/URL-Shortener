@@ -24,7 +24,7 @@ const HeroArea = () => {
     <Grid
       container
       sx={{
-        minHeight: '85vh',
+        minHeight: '100vh',
         px: {
           xs: 2,
           md: 3
