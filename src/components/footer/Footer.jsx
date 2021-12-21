@@ -10,6 +10,7 @@ import {
   IconButton,
   Link,
   Tooltip,
+  Typography,
   useTheme
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
@@ -64,8 +65,9 @@ const Footer = () => {
             alignItems: 'center'
           }}
         >
-          Made with
-          {' '}
+          <Typography variant="body2">
+            Made with
+          </Typography>
           <Favorite
             color="error"
             sx={{
@@ -74,16 +76,17 @@ const Footer = () => {
               mx: 0.3
             }}
           />
-          {' '}
-          by
-          <Link
-            href="https://www.facebook.com/0xNaim"
-            target="_blank"
-            rel="noreferrer"
-            className={classes.footerLink}
-          >
-            Naim
-          </Link>
+          <Typography variant="body2">
+            by
+            <Link
+              href="https://www.facebook.com/0xNaim"
+              target="_blank"
+              rel="noreferrer"
+              className={classes.footerLink}
+            >
+              Naim
+            </Link>
+          </Typography>
         </Box>
       </Box>
 
