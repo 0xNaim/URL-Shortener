@@ -22,7 +22,6 @@ const ColorModeContextProvider = ({ children }) => {
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
-        // setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
         if (mode === 'light') {
           setMode('dark');
           localStorage.setItem('themeMode', 'dark');
