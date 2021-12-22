@@ -1,16 +1,23 @@
-import React from 'react';
+import React, {
+  lazy,
+  Suspense
+} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import App from './app/App';
+import Loading from './components/loading/Loading';
 import { ColorModeContextProvider } from './contexts/themeContext';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
+const App = lazy(() => import('./app/App'));
+
 ReactDOM.render(
   <BrowserRouter>
     <ColorModeContextProvider>
-      <App />
+      <Suspense fallback={<Loading />}>
+        <App />
+      </Suspense>
     </ColorModeContextProvider>
   </BrowserRouter>,
   document.getElementById('root')
