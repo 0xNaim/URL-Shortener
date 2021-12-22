@@ -1,4 +1,7 @@
-import { Grid } from '@mui/material';
+import {
+  Grid,
+  useTheme
+} from '@mui/material';
 import {
   useEffect,
   useState
@@ -14,9 +17,12 @@ import Shortener from '../pages/shortener/Shortener';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const theme = useTheme();
 
   useEffect(() => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
   }, []);
 
   return (
@@ -32,7 +38,7 @@ const App = () => {
           }}
         >
           <HashLoader
-            color="#36D7B7"
+            color={theme.palette.mode === 'light' ? '#1976d2' : '#36D7B7'}
             loading={loading}
             size={50}
           />
