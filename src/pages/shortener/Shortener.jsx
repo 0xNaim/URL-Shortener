@@ -21,6 +21,7 @@ const Shortener = () => {
   const [shortLink, setShortLink] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
+  const [error, setError] = useState('');
 
   const validUrl = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/.test(link);
 
@@ -30,8 +31,16 @@ const Shortener = () => {
         setShortLink(res.data.result.full_short_link);
         setIsLoading(false);
         setLink('');
+        setError('');
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (err) {
+          setError(err.message);
+          setOpen(true);
+          setIsLoading(false);
+          setShortLink('');
+        }
+      });
   };
 
   const handleClick = () => {
@@ -160,12 +169,12 @@ const Shortener = () => {
         >
           <Alert
             onClose={handleClose}
-            severity="success"
+            severity={error ? 'error' : 'success'}
             sx={{
               width: '100%'
             }}
           >
-            Link copied!
+            {error || 'Link copied!'}
           </Alert>
         </Snackbar>
       </Container>
