@@ -23,13 +23,7 @@ const Shortener = () => {
   const [open, setOpen] = useState(false);
   const [error, setError] = useState('');
 
-  // Original regex
-  // const validUrl = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/.test(link);
-
-  // const validUrl = /(https?:\/\/)(www\.|(?!www.))([a-z0-9-]+)(\.[^\s]{2,})/.test(link);
-
   const validUrl = /(https?:\/\/)(w{3}\.|(?!w{3}))([a-z\d-]+)(\.[^\s]{2,})/.test(link);
-
 
   const getShortLink = async () => {
     await axios.get(`https://api.shrtco.de/v2/shorten?url=${link}`)
