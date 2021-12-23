@@ -26,7 +26,7 @@ const Shortener = () => {
   // Original regex
   // const validUrl = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/.test(link);
 
-  const validUrl = /(ftp:\/\/|http:\/\/|https:\/\/)(www\.|(?!www.))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}/.test(link);
+  const validUrl = /(ftp:\/\/|http:\/\/|https:\/\/)(www\.|(?!www.))[a-z0-9][a-z0-9-]+[a-z0-9]\.[a-z]{2,5}[^\s]{2,}/.test(link);
 
 
   const getShortLink = async () => {
