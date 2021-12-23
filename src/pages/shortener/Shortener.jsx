@@ -28,7 +28,7 @@ const Shortener = () => {
 
   // const validUrl = /(https?:\/\/)(www\.|(?!www.))([a-z0-9-]+)(\.[^\s]{2,})/.test(link);
 
-  const validUrl = /(https?:\/\/)(w{3}\.|(?!w{3}))([a-z0-9-]+)(\.[^\s]{2,})/.test(link);
+  const validUrl = /(https?:\/\/)(w{3}\.|(?!w{3}))([a-z\d-]+)(\.[^\s]{2,})/.test(link);
 
 
   const getShortLink = async () => {
