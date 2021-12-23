@@ -97,7 +97,7 @@ const Shortener = () => {
             </Typography>
             <TextField
               id="outlined-search"
-              label="Paste a long link"
+              label="http://example.com"
               type="search"
               autoComplete="off"
               fullWidth
