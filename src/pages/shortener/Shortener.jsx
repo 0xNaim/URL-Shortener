@@ -61,7 +61,6 @@ const Shortener = () => {
     setOpen(false);
   };
 
-
   return (
     <>
       <Helmet>
