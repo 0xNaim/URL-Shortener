@@ -1,8 +1,7 @@
 import { ArrowRightAlt } from '@mui/icons-material';
 import {
   Box,
-  Button,
-  Grid,
+  Button, Container, Grid,
   Typography
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
@@ -21,89 +20,87 @@ const HeroArea = () => {
   const classes = useStyles();
 
   return (
-    <Grid
-      container
-      sx={{
-        minHeight: '100vh',
-        px: {
-          xs: 2,
-          md: 3
-        }
-      }}
-    >
+    <Container maxWidth="xl">
       <Grid
-        item
-        xs={12}
-        md={6}
+        container
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-          color: 'inherit'
+          minHeight: '100vh'
         }}
       >
-        <Box
+        <Grid
+          item
+          xs={12}
+          md={6}
           sx={{
-            width: {
-              xs: '85%',
-              md: '75%'
-            }
+            display: 'flex',
+            alignItems: 'center',
+            color: 'inherit'
           }}
         >
-          <Typography
-            variant="h3"
-            gutterBottom
+          <Box
             sx={{
-              opacity: 0.9
+              width: {
+                xs: '85%',
+                md: '75%'
+              }
             }}
           >
-            URL Shortener
-          </Typography>
-          <Typography
-            gutterBottom
-            variant="body2"
-            sx={{
-              opacity: 0.8
-            }}
-          >
-            URL Shortener is a simple react web application        where users can short their long URL into a short URL.
-          </Typography>
-          <Link to="/short" className={classes.link}>
-            <Button
-              variant="contained"
-              endIcon={<ArrowRightAlt />}
+            <Typography
+              variant="h3"
+              gutterBottom
               sx={{
-                mt: 2,
-                py: 1.5
+                opacity: 0.9
               }}
             >
-              Getting Started
-            </Button>
-          </Link>
-        </Box>
-      </Grid>
-      <Grid
-        item
-        md={6}
-        sx={{
-          display: {
-            xs: 'none',
-            md: 'flex'
-          },
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-      >
-        <Box
-          component="img"
+              URL Shortener
+            </Typography>
+            <Typography
+              gutterBottom
+              variant="body2"
+              sx={{
+                opacity: 0.8
+              }}
+            >
+              URL Shortener is a simple react web application        where users can short their long URL into a short URL.
+            </Typography>
+            <Link to="/short" className={classes.link}>
+              <Button
+                variant="contained"
+                endIcon={<ArrowRightAlt />}
+                sx={{
+                  mt: 2,
+                  py: 1.5
+                }}
+              >
+                Getting Started
+              </Button>
+            </Link>
+          </Box>
+        </Grid>
+        <Grid
+          item
+          md={6}
           sx={{
-            minWidth: 300,
-            minHeight: 250
+            display: {
+              xs: 'none',
+              md: 'flex'
+            },
+            alignItems: 'center',
+            justifyContent: 'center'
           }}
-          alt="URL Shortener"
-          src={URLShortener}
-        />
+        >
+          <Box
+            component="img"
+            sx={{
+              minWidth: 300,
+              minHeight: 250
+            }}
+            alt="URL Shortener"
+            src={URLShortener}
+          />
+        </Grid>
       </Grid>
-    </Grid>
+    </Container>
   );
 };
 

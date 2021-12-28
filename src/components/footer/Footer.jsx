@@ -38,91 +38,94 @@ const Footer = () => {
   const theme = useTheme();
 
   return (
-    <Container
-      maxWidth="xl"
+    <Box
       className={theme.palette.mode === 'light' ? classes.footerLight : classes.footerDark}
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        opacity: 0.85
-      }}
     >
-      <Box sx={{
-        flexGrow: 1
-      }}
+      <Container
+        maxWidth="xl"
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          opacity: 0.85
+        }}
       >
-        <Box
-          component="span"
-          align="left"
-          sx={{
-            display: 'flex',
-            alignItems: 'center'
-          }}
+        <Box sx={{
+          flexGrow: 1
+        }}
         >
-          <Typography variant="body2">
-            Made with
-          </Typography>
-          <Favorite
-            color="error"
+          <Box
+            component="span"
+            align="left"
             sx={{
-              fontSize: 14,
-              mt: 0.2,
-              mx: 0.3
+              display: 'flex',
+              alignItems: 'center'
             }}
-          />
-          <Typography variant="body2">
-            by
-            <Link
-              href="https://www.facebook.com/0xNaim"
-              target="_blank"
-              rel="noreferrer"
-              className={classes.footerLink}
-            >
-              Naim
-            </Link>
-          </Typography>
+          >
+            <Typography variant="body2">
+              Made with
+            </Typography>
+            <Favorite
+              color="error"
+              sx={{
+                fontSize: 14,
+                mt: 0.2,
+                mx: 0.3
+              }}
+            />
+            <Typography variant="body2">
+              by
+              <Link
+                href="https://www.facebook.com/0xNaim"
+                target="_blank"
+                rel="noreferrer"
+                className={classes.footerLink}
+              >
+                Naim
+              </Link>
+            </Typography>
+          </Box>
         </Box>
-      </Box>
 
-      <Box sx={{
-        minWidth: '80px',
-        mt: 1,
-        display: 'flex',
-        justifyContent: 'space-between'
-      }}
-      >
-        <Tooltip title="Facebook">
-          <IconButton sx={{
-            p: 0
-          }}
-          >
-            <Link color="inherit" href="https://www.facebook.com/0xNaim" underline="none" target="_blank" rel="noreferrer">
-              <Facebook />
-            </Link>
-          </IconButton>
-        </Tooltip>
-        <Tooltip title="LinkedIn">
-          <IconButton sx={{
-            p: 0
-          }}
-          >
-            <Link color="inherit" href="https://www.linkedin.com/in/0xnaim/" underline="none" target="_blank" rel="noreferrer">
-              <LinkedIn />
-            </Link>
-          </IconButton>
-        </Tooltip>
-        <Tooltip title="GitHub">
-          <IconButton sx={{
-            p: 0
-          }}
-          >
-            <Link color="inherit" href="https://github.com/0xNaim" underline="none" target="_blank" rel="noreferrer">
-              <GitHub />
-            </Link>
-          </IconButton>
-        </Tooltip>
-      </Box>
-    </Container>
+        <Box sx={{
+          minWidth: '80px',
+          mt: 1,
+          display: 'flex',
+          justifyContent: 'space-between'
+        }}
+        >
+          <Tooltip title="Facebook">
+            <IconButton sx={{
+              p: 0
+            }}
+            >
+              <Link color="inherit" href="https://www.facebook.com/0xNaim" underline="none" target="_blank" rel="noreferrer">
+                <Facebook />
+              </Link>
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="LinkedIn">
+            <IconButton sx={{
+              p: 0
+            }}
+            >
+              <Link color="inherit" href="https://www.linkedin.com/in/0xnaim/" underline="none" target="_blank" rel="noreferrer">
+                <LinkedIn />
+              </Link>
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="GitHub">
+            <IconButton sx={{
+              p: 0
+            }}
+            >
+              <Link color="inherit" href="https://github.com/0xNaim" underline="none" target="_blank" rel="noreferrer">
+                <GitHub />
+              </Link>
+            </IconButton>
+          </Tooltip>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 
